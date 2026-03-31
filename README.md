@@ -12,7 +12,7 @@ class Vulnerability:
 class Me:
     name: str = "정지원"
     birth: int = 2005
-    role: str = "Security Researcher & Developer"
+    role: str = "Developer" # 객체 지향 프로그래머 !
     skills: List[str] = ["Python", "C#", "WPF", "MongoDB"]
     
     vulnerabilities: List[Vulnerability] = [
