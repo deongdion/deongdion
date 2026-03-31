@@ -1,6 +1,14 @@
 ```py
-@dataclass
+from datetime import datetime
+
 class Me:
-  name: str = "Jeong Jiwon"
-  age: int = 22
+    name: str = "Jeong Jiwon"
+    birth: int = 2005
+    role: str = "Developer"
+    
+    @property
+    def age(self) -> int:
+        return datetime.now().year - self.birth
+
+me = Me()
 ```
