@@ -12,7 +12,7 @@ class Vulnerability:
 class Me:
     name: str = "정지원"
     birth: int = 2005
-    role: str = "Developer" # 객제 지향 프로그래머 !
+    role: str = "Security Researcher & Developer"
     skills: List[str] = ["Python", "C#", "WPF", "MongoDB"]
     
     vulnerabilities: List[Vulnerability] = [
@@ -48,4 +48,18 @@ class Me:
         return datetime.now().year - self.birth
 
 me = Me()
+
+if __name__ == "__main__":
+    print(f"Name: {me.name}")
+    print(f"Age: {me.age}")
+    print(f"Role: {me.role}")
+    print(f"Skills: {', '.join(me.skills)}")
+    print(f"\nSecurity Vulnerabilities Reported: {len(me.vulnerabilities)}")
+    
+    severity_count = {}
+    for vuln in me.vulnerabilities:
+        severity_count[vuln.severity] = severity_count.get(vuln.severity, 0) + 1
+    
+    for severity, count in severity_count.items():
+        print(f"  {severity}: {count}")
 ```
