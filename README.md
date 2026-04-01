@@ -46,20 +46,4 @@ class Me:
     @property
     def age(self) -> int:
         return datetime.now().year - self.birth
-
-me = Me()
-
-if __name__ == "__main__":
-    print(f"Name: {me.name}")
-    print(f"Age: {me.age}")
-    print(f"Role: {me.role}")
-    print(f"Skills: {', '.join(me.skills)}")
-    print(f"\nSecurity Vulnerabilities Reported: {len(me.vulnerabilities)}")
-    
-    severity_count = {}
-    for vuln in me.vulnerabilities:
-        severity_count[vuln.severity] = severity_count.get(vuln.severity, 0) + 1
-    
-    for severity, count in severity_count.items():
-        print(f"  {severity}: {count}")
 ```
